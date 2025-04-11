@@ -38,6 +38,17 @@ export function HomeSearch() {
       if (processResult.data.color)
         params.set("color", processResult.data.color);
 
+      // Construct the toast message
+      let toastMessage = "AI Analysis found:";
+      if (processResult.data.make) toastMessage += ` Make: ${processResult.data.make}`;
+      if (processResult.data.bodyType) toastMessage += ` Body: ${processResult.data.bodyType}`;
+      if (processResult.data.color) toastMessage += ` Color: ${processResult.data.color}`;
+
+      // Show the toast if any data was found
+      if (toastMessage !== "AI Analysis found:") {
+        toast.info(toastMessage);
+      }
+
       // Redirect to search results
       router.push(`/bikes?${params.toString()}`);
     }
