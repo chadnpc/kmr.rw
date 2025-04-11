@@ -7,7 +7,7 @@ import { Toaster } from "sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "motorbikerental",
+  title: "Kigali Motorbike Rental - RW",
   description: "We rent motorbikes and scooters in Rwanda",
 };
 
