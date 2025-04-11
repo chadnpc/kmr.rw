@@ -22,11 +22,11 @@ export function ReservationsList({ initialData }) {
   // Group bookings by status
   const upcomingBookings = initialData?.data?.filter((booking) =>
     ["PENDING", "CONFIRMED"].includes(booking.status)
-  );
+  ) || [];
 
   const pastBookings = initialData?.data?.filter((booking) =>
     ["COMPLETED", "CANCELLED", "NO_SHOW"].includes(booking.status)
-  );
+  ) || [];
 
   // No reservations
   if (initialData?.data?.length === 0) {
@@ -52,11 +52,11 @@ export function ReservationsList({ initialData }) {
       {/* Upcoming Bookings */}
       <div>
         <h2 className="text-2xl font-bold mb-4">Upcoming Test Drives</h2>
-        {upcomingBookings.length === 0 ? (
+        {upcomingBookings?.length === 0 ? (
           <p className="text-gray-500 italic">No upcoming test drives.</p>
         ) : (
           <div className="space-y-3">
-            {upcomingBookings.map((booking) => (
+            {upcomingBookings?.map((booking) => (
               <TestDriveCard
                 key={booking.id}
                 booking={booking}
@@ -72,11 +72,11 @@ export function ReservationsList({ initialData }) {
       </div>
 
       {/* Past Bookings */}
-      {pastBookings.length > 0 && (
+      {pastBookings?.length > 0 && (
         <div>
           <h2 className="text-2xl font-bold mb-4">Past Test Drives</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {pastBookings.map((booking) => (
+            {pastBookings?.map((booking) => (
               <TestDriveCard
                 key={booking.id}
                 booking={booking}

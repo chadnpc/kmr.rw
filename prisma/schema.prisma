@@ -143,3 +143,12 @@ enum BookingStatus {
   CANCELLED
   NO_SHOW
 }
+
+model AdminInvite {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
