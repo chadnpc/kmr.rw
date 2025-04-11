@@ -20,7 +20,7 @@ export default async function SavedBikesPage() {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <h1 className="text-6xl mb-6 gradient-title">Your Saved Bikes</h1>
+      <h1 className="text-4xl mb-6 gradient-title">your saved bikes</h1>
       <SavedBikesList initialData={savedBikesResult} />
     </div>
   );

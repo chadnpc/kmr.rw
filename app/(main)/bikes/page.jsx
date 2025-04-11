@@ -13,7 +13,7 @@ export default async function BikesPage() {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <h1 className="text-6xl mb-4 gradient-title">Browse Bikes</h1>
+      <h1 className="text-4xl mb-4 gradient-title">⫍‍⌕‍⫎ bikes</h1>
 
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Filters Section */}

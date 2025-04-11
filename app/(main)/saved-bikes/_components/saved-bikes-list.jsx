@@ -19,7 +19,7 @@ export function SavedBikesList({ initialData }) {
           heart icon to save bikes for later.
         </p>
         <Button variant="default" asChild>
-          <Link href="/bikes">Browse Bikes</Link>
+          <Link href="/bikes">🔍︎ Bikes</Link>
         </Button>
       </div>
     );

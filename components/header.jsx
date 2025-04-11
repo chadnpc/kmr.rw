@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Button } from "./ui/button";
-import { Heart, CarFront, Layout, ArrowLeft } from "lucide-react";
+import { Heart, BikeIcon, Layout, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { useState } from "react";
@@ -46,7 +46,7 @@ const Header = ({ isAdminPage = false, initialUser = null, initialIsAdmin = fals
                   className="text-gray-600 hover:text-blue-600 flex items-center gap-2"
                 >
                   <Button variant="outline">
-                    <CarFront size={18} />
+                    <BikeIcon size={18} />
                     <span className="hidden md:inline">My Reservations</span>
                   </Button>
                 </Link>

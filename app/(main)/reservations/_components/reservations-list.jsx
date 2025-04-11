@@ -41,7 +41,7 @@ export function ReservationsList({ initialData }) {
           book a test drive to get started.
         </p>
         <Button variant="default" asChild>
-          <Link href="/bikes">Browse Bikes</Link>
+          <Link href="/bikes">🔍︎ Bikes</Link>
         </Button>
       </div>
     );
