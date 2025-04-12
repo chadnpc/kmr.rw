@@ -2,12 +2,15 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
+import { useRouter } from 'next/navigation'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { completeOnboarding } from '@/actions/user'
 
 export default function OnboardingPage() {
   const [step, setStep] = useState(1)
   const [formData, setFormData] = useState({
+    id: '',
     name: '',
     email: '',
     phone: '',
@@ -24,6 +27,19 @@ export default function OnboardingPage() {
 
   const nextStep = () => setStep(prev => prev + 1)
   const prevStep = () => setStep(prev => prev - 1)
+
+  const router = useRouter()
+  const handleCompleteSetup = async () => {
+    try {
+      const result = await completeOnboarding(formData)
+      alert(result.message)
+      if(result.status === 'created' || result.status === 'updated') {
+        router.push('/')
+      }
+    } catch (error) {
+      alert('An error occurred: ' + error.message)
+    }
+  }
 
   return (
     <div className="max-w-md mx-auto p-6">
@@ -99,7 +115,7 @@ export default function OnboardingPage() {
 
           <div className="flex justify-between">
             <Button variant="outline" onClick={prevStep}>Back</Button>
-            <Button>Complete Setup</Button>
+            <Button onClick={handleCompleteSetup}>Complete Setup</Button>
           </div>
         </div>
       )}

@@ -1,5 +1,5 @@
 import Header from "@/components/header";
-import Sidebar from "@/app/(admin)/admin/_components/sidebar";
+import { Sidebar } from "@/app/(admin)/admin/_components/sidebar";
 import { getAdmin } from "@/actions/admin";
 import { notFound } from "next/navigation";
 
